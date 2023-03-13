@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<USERNAME1></USERNAME1>
+			<PASSWORD></PASSWORD>
+
+			<FIRSTNAME></FIRSTNAME>
+			<LASTNAME></LASTNAME>
+			<STREET></STREET>
+			<CITY></CITY>
+			<POSTCODE></POSTCODE>
+			<PHONENO></PHONENO>
+
+			<BROWSER></BROWSER>
+			
+		</EnvironmentVariables>
+	</RunConfiguration>
+</RunSettings>
