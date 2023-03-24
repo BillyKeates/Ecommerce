@@ -21,10 +21,7 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
         private IWebDriver _driver;
         private readonly ScenarioContext _scenarioContext;
         private ISpecFlowOutputHelper _outputHelper;
-
-
-        public static string browser;
-
+        private string browser;
 
         public HooksClass(ScenarioContext scenarioContext,ISpecFlowOutputHelper outputHelper)
         {
@@ -32,13 +29,11 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
             _outputHelper = outputHelper;
         }
 
-
         [Before]
         public void SetUp()
         {
             _scenarioContext["output"] = _outputHelper;
             browser = Environment.GetEnvironmentVariable("BROWSER");
-
             switch (browser)
             {
                 case "firefox":
@@ -51,19 +46,14 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
                     break;
             }
 
-
             _scenarioContext["myDriver"] = _driver;
-
             _driver.Url = Environment.GetEnvironmentVariable("BASEURL");
 
-
             LogInPagePOM login = new LogInPagePOM(_driver,_outputHelper);
-
             //Enter username and password into the input elements on the log in page
             login.EnterUsername(Environment.GetEnvironmentVariable("SECRET_USERNAME"));
             login.EnterPassword(Environment.GetEnvironmentVariable("SECRET_PASSWORD"));
             login.ClickLogIn();
-
 
             //Check if demo store notice is displayed
             //Click dismiss if it is displayed
@@ -79,7 +69,6 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
             topNav.GoToCartPage();
             
             CartPagePOM cart = new CartPagePOM(_driver,_outputHelper);
-
             while(cart.IsCartEmpty() == false)
             {
                 cart.IsCartEmpty();

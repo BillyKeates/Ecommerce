@@ -16,12 +16,10 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             this._driver = driver;
         }
 
-
         private IWebElement _shopLink => _driver.FindElement(By.LinkText("Shop"));
         private IWebElement _cartLink => _driver.FindElement(By.LinkText("Cart"));
         private IWebElement _checkoutLink => _driver.FindElement(By.LinkText("Checkout"));
         private IWebElement _myAccountLink => _driver.FindElement(By.LinkText("My account"));
-
 
         public void GoToShopPage()
         {
@@ -31,7 +29,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         public void GoToCartPage()
         {
             _cartLink.Click();
-
         }
 
         public void GoToCheckoutPage()

@@ -24,8 +24,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         //Generate random number to find random item
         static Random myrand = new Random();
         int num = myrand.Next(27,38);
-
-        
         
         private IWebElement _chosenItem => _driver.FindElement(By.CssSelector("li.post-" + num+ "> a > h2")); //chosen items name
         private IWebElement _addToCartBtn => _driver.FindElement(By.CssSelector("li.post-"+num+ " > .add_to_cart_button")); //button to add a random item to cart
@@ -35,26 +33,24 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         public void AddItemToCart()
         {
             string browser = Environment.GetEnvironmentVariable("BROWSER");
-
+            //firefox requires a different method of scrolling
             if (browser == "firefox")
             {
-                //move the screen to the specified element
+                //move the screen to the specified item
                 IJavaScriptExecutor js = (IJavaScriptExecutor)_driver;
                 js.ExecuteScript("arguments[0].scrollIntoView(true);", _addToCartBtn);
             }
             else
             {
-                //scroll the screen to the chosen item
+                //scroll the screen to the specified item
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_addToCartBtn);
                 action.Perform();
             }
+
             _addToCartBtn.Click();
 
-            _outputHelper.WriteLine("Item is " + _chosenItem.Text);
-
-            //MyHelpers screenshot = new MyHelpers(_driver);
-            //screenshot.ScreenshotElement(_chosenItem, "itemScrnShot.png");   
+            _outputHelper.WriteLine("Item is " + _chosenItem.Text); 
         }
 
         public void ViewCart()
@@ -64,9 +60,7 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             help.WaitForElement(By.LinkText("View cart"), 3);
 
             _viewCartBtn.Click();
-
         }
-
 
         public void DismissAlert()
         {
@@ -75,7 +69,5 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
                 _footerAlert.Click();
             }
         }
-
-
     }
 }

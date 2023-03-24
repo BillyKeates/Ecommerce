@@ -12,7 +12,6 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
 {
     internal class MyHelpers
     {
-
         private IWebDriver _driver;
         private ISpecFlowOutputHelper _outputHelper;
 
@@ -26,20 +25,6 @@ namespace uk.co.edgewords.ecommerceprojectfinal.Support
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeToWait) );
             wait.Until(drv => drv.FindElement(locator).Enabled);
-        }
-
-
-        public void ScreenshotElement(IWebElement element, string screenshotname)
-        {
-
-            string screenshotpath = "C:\\screenshots\\" + screenshotname;
-
-            ITakesScreenshot ssdriver = element as ITakesScreenshot;
-            Screenshot screenshot = ssdriver.GetScreenshot();
-            screenshot.SaveAsFile(screenshotpath, ScreenshotImageFormat.Png);
-
-            _outputHelper.AddAttachment(screenshotpath);
-            TestContext.AddTestAttachment(screenshotpath, screenshotname);
         }
 
         public void ScreenshotPage(IWebDriver driver, string screenshotname)

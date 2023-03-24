@@ -19,7 +19,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             this._outputHelper = outputHelper;
         }
 
-
         private IWebElement _logOutBtn => _driver.FindElement(By.LinkText("Logout")); //Log out button
         private IWebElement _ordersLink => _driver.FindElement(By.LinkText("Orders")); //Button to go to orders page
 
@@ -29,8 +28,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         {
             _logOutBtn.Click();
         }
-
-        
 
         public void GoToOrders()
         {

@@ -22,28 +22,20 @@ namespace uk.co.edgewords.ecommerceprojectfinal.StepDefinitions
             this._outputHelper = (ISpecFlowOutputHelper)_scenarioContext["output"];
         }
 
-
-
         [Given(@"I have added an item to the cart")]
         public void GivenIHaveAddedAnItemToTheCart()
         {
-
             //go to shop page
             TopNavPOM topNav = new TopNavPOM(_driver);
             topNav.GoToShopPage();
             _outputHelper.WriteLine("On shop page.");
-
-
 
             //Click to add item to cart and view cart
             ShopPagePOM shop = new ShopPagePOM(_driver,_outputHelper);
             shop.AddItemToCart();
             shop.ViewCart();
             _outputHelper.WriteLine("On cart page.");
-
         }
-
-
 
         [When(@"I apply the coupon '(.*)' on the cart page")]
         public void WhenIApplyTheDiscountOnTheCartPage(string coupon)
@@ -59,7 +51,6 @@ namespace uk.co.edgewords.ecommerceprojectfinal.StepDefinitions
             //Check that discount is correct
             CartPagePOM cart = new CartPagePOM(_driver, _outputHelper);
             var discountResult = cart.CheckDiscount(discount);
-
 
             try
             {

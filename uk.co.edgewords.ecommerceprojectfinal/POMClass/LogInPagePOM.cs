@@ -11,7 +11,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
 {
     internal class LogInPagePOM
     {
-
         private IWebDriver _driver;
         private ISpecFlowOutputHelper _outputHelper;
 
@@ -25,7 +24,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         private IWebElement _passwordElement => _driver.FindElement(By.Id("password")); //password input box
         private IWebElement _logInButton => _driver.FindElement(By.CssSelector(".woocommerce-form-login__submit")); //log in button
         
-
         public void EnterUsername(string username)
         {
             //Give a more readable error if the user forgets to set the USERNAME environment variable
@@ -69,6 +67,5 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
                 return false;
             }
         }
-
     }
 }

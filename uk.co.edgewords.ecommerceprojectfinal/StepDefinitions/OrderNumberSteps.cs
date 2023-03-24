@@ -49,7 +49,6 @@ namespace uk.co.edgewords.ecommerceprojectfinal.StepDefinitions
             checkout.EnterPhoneNo(_userLoggedIn.userPhoneNo);
             checkout.SelectPaymentMethod();
 
-
             checkout.PlaceOrder();
         }
 
@@ -88,6 +87,5 @@ namespace uk.co.edgewords.ecommerceprojectfinal.StepDefinitions
 
             _outputHelper.WriteLine("Test finished.");
         }
-
     }
 }

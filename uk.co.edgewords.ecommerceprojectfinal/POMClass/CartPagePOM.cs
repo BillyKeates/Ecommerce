@@ -21,22 +21,13 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             this._outputHelper = outputHelper;
         }
 
-
         private IWebElement _couponInput => _driver.FindElement(By.Id("coupon_code")); //coupon input box
         private IWebElement _applyCouponBtn => _driver.FindElement(By.CssSelector(".coupon > button")); //button to apply coupon
-
         private IWebElement _checkoutBtn => _driver.FindElement(By.LinkText("Proceed to checkout")); //button to proceed to checkout
-
-
         private IWebElement _itemPrice => _driver.FindElement(By.CssSelector(".cart-subtotal > td")); //element containing original price of the item
         private IWebElement _discount => _driver.FindElement(By.CssSelector(".cart-discount > td > .amount")); //element containing total dicount applied
-
         private IWebElement _shippingCost => _driver.FindElement(By.CssSelector("#shipping_method > li > label > span")); //element containing shipping fees fro the item
-
         private IWebElement _totalPrice => _driver.FindElement(By.CssSelector(".order-total > td")); //element containing the calculated price the user must pay
-
-
-
 
         public void EnterCoupon(string coupon)
         {
@@ -48,9 +39,7 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             _applyCouponBtn.Click();
             MyHelpers help = new MyHelpers(_driver, _outputHelper);
             help.ScreenshotPage(_driver, "couponApplied.png");
-
         }
-
 
         public (decimal, decimal) CheckDiscount(int discount)
         {
@@ -61,7 +50,6 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             MyHelpers help = new MyHelpers(_driver, _outputHelper);
             help.WaitForElement(By.CssSelector(".cart-discount > td > .amount"), 3);
 
-
             //convert the discount calculated on the site to a decimal
             decimal actualDiscount = Convert.ToDecimal(_discount.Text.Substring(1));
 
@@ -69,9 +57,7 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             decimal expectedDiscount = itemPrice * (discount * 0.01m);
 
             _outputHelper.WriteLine("The Expected discount is: "+expectedDiscount + ", the actual discount found was " + actualDiscount);
-
             return (actualDiscount, expectedDiscount);
-
         }
 
         public (decimal, decimal) CheckPrice(int discount)
@@ -90,21 +76,13 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             decimal expectedTotalPrice = (itemPrice - expectedDiscount) + shippingPrice;
             _outputHelper.WriteLine("The expected total is "+expectedTotalPrice + ", the actual total found was " + actualPrice);
 
-
-            return (actualPrice, expectedTotalPrice);
-
-            
+            return (actualPrice, expectedTotalPrice);            
         }
-
-        
-
 
         public void GoToCheckout()
         {
             _checkoutBtn.Click();
         }
-
-
 
         public bool IsCartEmpty()
         {
@@ -121,6 +99,5 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
                 return true;
             }
         }
-
     }
 }
