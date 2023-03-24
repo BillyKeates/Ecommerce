@@ -1,88 +1,57 @@
-<test-run id="2" duration="18.870282" testcasecount="2" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:27Z" end-time="2023-03-13T 09:52:47Z">
-  <test-suite type="Assembly" name="uk.co.edgewords.ecommerceprojectfinal.dll" fullname="C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\bin\Debug\net6.0\uk.co.edgewords.ecommerceprojectfinal.dll" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-    <test-suite type="TestSuite" name="uk" fullname="uk" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-      <test-suite type="TestSuite" name="co" fullname="uk.co" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-        <test-suite type="TestSuite" name="edgewords" fullname="uk.co.edgewords" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-          <test-suite type="TestSuite" name="ecommerceprojectfinal" fullname="uk.co.edgewords.ecommerceprojectfinal" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-            <test-suite type="TestSuite" name="Features" fullname="uk.co.edgewords.ecommerceprojectfinal.Features" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-              <test-suite type="TestFixture" name="E_CommerceWebsiteValidationFeature" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature" classname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature" total="2" passed="1" failed="1" inconclusive="0" skipped="0" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:47Z" duration="18.870282">
-                <test-case name="ApplyingADiscountCode" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature.ApplyingADiscountCode" methodname="ApplyingADiscountCode" classname="E_CommerceWebsiteValidationFeature" result="Failed" start-time="2023-03-13T 09:52:28Z" end-time="2023-03-13T 09:52:36Z" duration="7.931679" asserts="0" seed="1422476062">
+<test-run id="2" duration="26.594834" testcasecount="2" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:52Z" end-time="2023-03-24T 15:01:21Z">
+  <test-suite type="Assembly" name="uk.co.edgewords.ecommerceprojectfinal.dll" fullname="C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\bin\Debug\net6.0\uk.co.edgewords.ecommerceprojectfinal.dll" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+    <test-suite type="TestSuite" name="uk" fullname="uk" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+      <test-suite type="TestSuite" name="co" fullname="uk.co" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+        <test-suite type="TestSuite" name="edgewords" fullname="uk.co.edgewords" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+          <test-suite type="TestSuite" name="ecommerceprojectfinal" fullname="uk.co.edgewords.ecommerceprojectfinal" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+            <test-suite type="TestSuite" name="Features" fullname="uk.co.edgewords.ecommerceprojectfinal.Features" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+              <test-suite type="TestFixture" name="E_CommerceWebsiteValidationFeature" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature" classname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:21Z" duration="26.594834">
+                <test-case name="ApplyingADiscountCode" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature.ApplyingADiscountCode" methodname="ApplyingADiscountCode" classname="E_CommerceWebsiteValidationFeature" result="Passed" start-time="2023-03-24T 15:00:54Z" end-time="2023-03-24T 15:01:06Z" duration="11.589585" asserts="0" seed="356084770">
                   <properties>
                     <property name="Category" value="TestCase1" />
                   </properties>
-                  <output><![CDATA[Unknown browser - starting chrome
+                  <output><![CDATA[-> Unknown browser - starting chrome
 Given I have added an item to the cart
-On shop page.
-On cart page.
--> done: ECommerceSteps.GivenIHaveAddedAnItemToTheCart() (3.1s)
+-> On shop page.
+-> Item is Polo
+-> On cart page.
+-> done: CheckCouponSteps.GivenIHaveAddedAnItemToTheCart() (2.4s)
 When I apply the coupon 'edgewords' on the cart page
--> done: ECommerceSteps.WhenIApplyTheDiscountOnTheCartPage("edgewords") (0.1s)
-Then the correct total cost is calculated
-The Expected discount is: 5.2500, the actual discount found was 3.50
-NUnit.Framework.AssertionException:   Discount is not 15%
-  Expected: True
-  But was:  False
-
-   at NUnit.Framework.Assert.ReportFailure(String message)
-   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)
-   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)
-   at uk.co.edgewords.ecommerceprojectfinal.StepDefinitions.ECommerceSteps.ThenTheCorrectTotalCostIsCalculated() in C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\StepDefinitions\ECommerceSteps.cs:line 76
-The expected total is 33.7000, the actual total found was 35.45
-NUnit.Framework.AssertionException: Multiple failures or warnings in test:
-  1)   Discount is not 15%
-  Expected: True
-  But was:  False
-
-  2)   Total price is not correct
-  Expected: True
-  But was:  False
-
-
-   at NUnit.Framework.Assert.ReportFailure(String message)
-   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)
-   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)
-   at uk.co.edgewords.ecommerceprojectfinal.StepDefinitions.ECommerceSteps.ThenTheCorrectTotalCostIsCalculated() in C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\StepDefinitions\ECommerceSteps.cs:line 88
-On My Account page
-Test finished.
--> done: ECommerceSteps.ThenTheCorrectTotalCostIsCalculated() (2.8s)
+-> done: CheckCouponSteps.WhenIApplyTheDiscountOnTheCartPage("edgewords") (0.3s)
+Then the total cost reflects the discount of 15%
+-> The Expected discount is: 3.0000, the actual discount found was 3.00
+-> The expected total is 20.9500, the actual total found was 20.95
+-> Test finished.
+-> done: CheckCouponSteps.ThenTheTotalCostReflectsTheDiscountOf(15) (1.3s)
+-> Item removed from cart.
+-> Cart is already empty.
+-> Cart is already empty.
 
 ]]></output>
-                  <failure>
-                    <message>Multiple failures or warnings in test:
-  1)   Discount is not 15%
-  Expected: True
-  But was:  False
-
-  2)   Total price is not correct
-  Expected: True
-  But was:  False
-
-</message>
-                    <stack-trace>   at uk.co.edgewords.ecommerceprojectfinal.StepDefinitions.ECommerceSteps.ThenTheCorrectTotalCostIsCalculated() in C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\StepDefinitions\ECommerceSteps.cs:line 76
-   at uk.co.edgewords.ecommerceprojectfinal.StepDefinitions.ECommerceSteps.ThenTheCorrectTotalCostIsCalculated() in C:\Users\BillyKeates\source\repos\uk.co.edgewords.ecommerceprojectfinal\uk.co.edgewords.ecommerceprojectfinal\StepDefinitions\ECommerceSteps.cs:line 88
-</stack-trace>
-                  </failure>
                 </test-case>
-                <test-case name="RecievingAnOrderNumber" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature.RecievingAnOrderNumber" methodname="RecievingAnOrderNumber" classname="E_CommerceWebsiteValidationFeature" result="Passed" start-time="2023-03-13T 09:52:36Z" end-time="2023-03-13T 09:52:47Z" duration="10.938603" asserts="0" seed="881149911">
+                <test-case name="OrderNumberShowsInOrderHistory" fullname="uk.co.edgewords.ecommerceprojectfinal.Features.E_CommerceWebsiteValidationFeature.OrderNumberShowsInOrderHistory" methodname="OrderNumberShowsInOrderHistory" classname="E_CommerceWebsiteValidationFeature" result="Passed" start-time="2023-03-24T 15:01:06Z" end-time="2023-03-24T 15:01:21Z" duration="15.005249" asserts="0" seed="956336417">
                   <properties>
                     <property name="Category" value="TestCase2" />
                   </properties>
-                  <output><![CDATA[Unknown browser - starting chrome
+                  <output><![CDATA[-> Unknown browser - starting chrome
 Given I have added an item to the cart
-On shop page.
-On cart page.
--> done: ECommerceSteps.GivenIHaveAddedAnItemToTheCart() (3.0s)
-When I go through the checkout process
+-> On shop page.
+-> Item is Hoodie with Pocket
+-> On cart page.
+-> done: CheckCouponSteps.GivenIHaveAddedAnItemToTheCart() (2.4s)
+When I go through the checkout process with these credentials
+  --- table step argument ---
+  | userFName | userLName | userCountry    | userStreet   | userCity  | userPostcode | userPhoneNo  |
+  | first     | last      | United Kingdom | 30 test road | test city | YO10 4DP     | 07777 777777 |
 On Checkout page.
--> done: ECommerceSteps.WhenIGoThroughTheCheckoutProcess() (2.2s)
-Then I will recieve an order number
-Order number is 5939
-On My account page.
-On My account => orders page.
-Order number 2 is: 5939
-On My Account page
-Test finished.
--> done: ECommerceSteps.ThenIWillRecieveAnOrderNumber() (3.7s)
+-> done: OrderNumberSteps.WhenIGoThroughTheCheckoutProcessWithTheseCredentials(<table>) (3.2s)
+Then my order will appear in my order history
+-> Order number is 6644
+-> On My account => orders page.
+-> Order number 2 is: 6644
+-> Test finished.
+-> done: OrderNumberSteps.ThenMyOrderWillAppearInMyOrderHistory() (3.0s)
+-> Cart is already empty.
 
 ]]></output>
                 </test-case>

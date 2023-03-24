@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow.Infrastructure;
 using uk.co.edgewords.ecommerceprojectfinal.Support;
 
 namespace uk.co.edgewords.ecommerceproject.POMClass
@@ -12,10 +13,12 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
     {
 
         private IWebDriver _driver;
+        private ISpecFlowOutputHelper _outputHelper;
 
-        public CartPagePOM(IWebDriver driver)
+        public CartPagePOM(IWebDriver driver, ISpecFlowOutputHelper outputHelper)
         {
             this._driver = driver;
+            this._outputHelper = outputHelper;
         }
 
 
@@ -33,6 +36,8 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         private IWebElement _totalPrice => _driver.FindElement(By.CssSelector(".order-total > td")); //element containing the calculated price the user must pay
 
 
+
+
         public void EnterCoupon(string coupon)
         {
             _couponInput.SendKeys(coupon);
@@ -41,59 +46,52 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         public void ApplyCoupon()
         {
             _applyCouponBtn.Click();
+            MyHelpers help = new MyHelpers(_driver, _outputHelper);
+            help.ScreenshotPage(_driver, "couponApplied.png");
 
         }
 
 
-        public bool CheckDiscount()
+        public (decimal, decimal) CheckDiscount(int discount)
         {
             //convert the price displayed on the site into a decimal
-            decimal ItemPrice = Convert.ToDecimal(_itemPrice.Text.Substring(1));
+            decimal itemPrice = Convert.ToDecimal(_itemPrice.Text.Substring(1));
 
             //Set explicit wait until disount is displayed
-            MyHelpers help = new MyHelpers(_driver);
+            MyHelpers help = new MyHelpers(_driver, _outputHelper);
             help.WaitForElement(By.CssSelector(".cart-discount > td > .amount"), 3);
 
 
             //convert the discount calculated on the site to a decimal
-            decimal ActualDiscount = Convert.ToDecimal(_discount.Text.Substring(1));
+            decimal actualDiscount = Convert.ToDecimal(_discount.Text.Substring(1));
 
             //calculate what the discount should be
-            decimal ExpectedDiscount = ItemPrice * 0.15m;
+            decimal expectedDiscount = itemPrice * (discount * 0.01m);
 
-            Console.WriteLine("The Expected discount is: "+ExpectedDiscount + ", the actual discount found was " + ActualDiscount);
+            _outputHelper.WriteLine("The Expected discount is: "+expectedDiscount + ", the actual discount found was " + actualDiscount);
 
-            if(ActualDiscount == ExpectedDiscount)
-            {
-                return true;
-            }
-            return false;
+            return (actualDiscount, expectedDiscount);
 
         }
 
-        public bool CheckPrice()
+        public (decimal, decimal) CheckPrice(int discount)
         {
             //Convert the shipping price displayed on site to a decimal
-            decimal ShippingPrice = Convert.ToDecimal(_shippingCost.Text.Substring(1));
+            decimal shippingPrice = Convert.ToDecimal(_shippingCost.Text.Substring(1));
 
             //convert the total price calculated by the site to a decimal
-            decimal ActualPrice = Convert.ToDecimal(_totalPrice.Text.Substring(1));
+            decimal actualPrice = Convert.ToDecimal(_totalPrice.Text.Substring(1));
 
             //Convert the original price of the item to a decimal
-            decimal ItemPrice = Convert.ToDecimal(_itemPrice.Text.Substring(1));
+            decimal itemPrice = Convert.ToDecimal(_itemPrice.Text.Substring(1));
 
             //calculate what the discount and total price should be
-            decimal ExpectedDiscount = ItemPrice * 0.15m;
-            decimal ExpectedTotalPrice = (ItemPrice - ExpectedDiscount) + ShippingPrice;
-            Console.WriteLine("The expected total is "+ExpectedTotalPrice + ", the actual total found was " + ActualPrice);
+            decimal expectedDiscount = itemPrice * (discount * 0.01m);
+            decimal expectedTotalPrice = (itemPrice - expectedDiscount) + shippingPrice;
+            _outputHelper.WriteLine("The expected total is "+expectedTotalPrice + ", the actual total found was " + actualPrice);
 
 
-            if(ActualPrice == ExpectedTotalPrice)
-            {
-                return true;
-            }
-
-            return false;
+            return (actualPrice, expectedTotalPrice);
 
             
         }
@@ -104,6 +102,24 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
         public void GoToCheckout()
         {
             _checkoutBtn.Click();
+        }
+
+
+
+        public bool IsCartEmpty()
+        {
+            try
+            {
+                IWebElement removeBtn = _driver.FindElement(By.CssSelector(".remove"));
+                removeBtn.Click();
+                _outputHelper.WriteLine("Item removed from cart.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _outputHelper.WriteLine("Cart is already empty.");
+                return true;
+            }
         }
 
     }

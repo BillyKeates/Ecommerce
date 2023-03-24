@@ -2,17 +2,15 @@
 <RunSettings>
 	<RunConfiguration>
 		<EnvironmentVariables>
-			<USERNAME1></USERNAME1>
-			<PASSWORD></PASSWORD>
 
-			<FIRSTNAME></FIRSTNAME>
-			<LASTNAME></LASTNAME>
-			<STREET></STREET>
-			<CITY></CITY>
-			<POSTCODE></POSTCODE>
-			<PHONENO></PHONENO>
+			<BASEURL>https://www.edgewordstraining.co.uk/demo-site/my-account/</BASEURL>
+			
+			<SECRET_USERNAME>billy.keates@nfocus.co.uk</SECRET_USERNAME>
+			<SECRET_PASSWORD>billykeates</SECRET_PASSWORD>
 
-			<BROWSER></BROWSER>
+			
+
+			<BROWSER>chrome</BROWSER>
 			
 		</EnvironmentVariables>
 	</RunConfiguration>

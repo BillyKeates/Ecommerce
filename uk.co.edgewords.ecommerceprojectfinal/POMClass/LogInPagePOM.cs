@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow.Infrastructure;
 using uk.co.edgewords.ecommerceprojectfinal.Support;
 
 namespace uk.co.edgewords.ecommerceproject.POMClass
@@ -12,11 +13,12 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
     {
 
         private IWebDriver _driver;
+        private ISpecFlowOutputHelper _outputHelper;
 
-
-        public LogInPagePOM(IWebDriver driver)
+        public LogInPagePOM(IWebDriver driver, ISpecFlowOutputHelper outputHelper)
         {
             this._driver = driver;
+            this._outputHelper = outputHelper;
         }
 
         private IWebElement _usernameElement => _driver.FindElement(By.Id("username")); //username input box
@@ -29,13 +31,11 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             //Give a more readable error if the user forgets to set the USERNAME environment variable
             if (username == null)
             {
-                throw new ArgumentNullException("username");
+                _outputHelper.WriteLine("No Username entered.");
             }
             
-
             _usernameElement.Clear();
             _usernameElement.SendKeys(username);
-
         }
 
 
@@ -44,7 +44,7 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             //Give a more readable error message if the user forgets to set the PASSWORD environment variable
             if (password == null)
             {
-                throw new ArgumentNullException("password");
+                _outputHelper.WriteLine("No Password entered.");
             }
             
             _passwordElement.Clear();

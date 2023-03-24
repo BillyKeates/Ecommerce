@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow.Infrastructure;
 using uk.co.edgewords.ecommerceprojectfinal.Support;
 
 namespace uk.co.edgewords.ecommerceproject.POMClass
@@ -11,10 +12,12 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
     internal class CheckoutPagePOM
     {
         private IWebDriver _driver;
+        private ISpecFlowOutputHelper _outputHelper;
 
-        public CheckoutPagePOM(IWebDriver driver)
+        public CheckoutPagePOM(IWebDriver driver, ISpecFlowOutputHelper outputHelper)
         {
             this._driver = driver;
+            this._outputHelper = outputHelper;
         }
 
         private IWebElement _userFirstName => _driver.FindElement(By.Id("billing_first_name")); //first name input box
@@ -90,10 +93,10 @@ namespace uk.co.edgewords.ecommerceproject.POMClass
             _placeOrderBtn.Click();
         }
 
-        public string GetOrderNum1()
+        public string GetOrderNumberPlaced()
         {
             //Set explicit wait until order number is displayed
-            MyHelpers help = new MyHelpers(_driver);
+            MyHelpers help = new MyHelpers(_driver, _outputHelper);
             help.WaitForElement(By.CssSelector(".woocommerce-order-overview__order"), 3);
             return _orderNum;
         }

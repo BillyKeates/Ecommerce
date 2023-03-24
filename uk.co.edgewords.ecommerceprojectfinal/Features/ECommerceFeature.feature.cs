@@ -118,21 +118,21 @@ this.FeatureBackground();
  testRunner.When("I apply the coupon \'edgewords\' on the cart page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("the correct total cost is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the total cost reflects the discount of 15%", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Recieving an order number")]
+        [NUnit.Framework.DescriptionAttribute("Order number shows in order history")]
         [NUnit.Framework.CategoryAttribute("TestCase2")]
-        public virtual void RecievingAnOrderNumber()
+        public virtual void OrderNumberShowsInOrderHistory()
         {
             string[] tagsOfScenario = new string[] {
                     "TestCase2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recieving an order number", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Order number shows in order history", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -156,10 +156,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "userFName",
+                            "userLName",
+                            "userCountry",
+                            "userStreet",
+                            "userCity",
+                            "userPostcode",
+                            "userPhoneNo"});
+                table1.AddRow(new string[] {
+                            "first",
+                            "last",
+                            "United Kingdom",
+                            "30 test road",
+                            "test city",
+                            "YO10 4DP",
+                            "07777 777777"});
 #line 14
- testRunner.When("I go through the checkout process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I go through the checkout process with these credentials", ((string)(null)), table1, "When ");
 #line hidden
-#line 15
+#line 17
  testRunner.Then("my order will appear in my order history", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

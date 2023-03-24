@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
+    <Folder Include="TestResults\" />
   </ItemGroup>
 
 </Project>
